@@ -12,8 +12,8 @@
     display: flex;
     justify-content: space-between;
     background-color: rebeccapurple;
-    border-top-left-radius: 15px;
-    border-top-right-radius:15px;
+    /* border-top-left-radius: 15px;
+    border-top-right-radius:15px; */
 }
 .logo-image{
     padding-top:5px;
