@@ -1,0 +1,17 @@
+.container{
+    background-color: lavender;
+    height: 100%;
+    width: 100%;
+}
+.title{
+    text-align: center;
+    margin-top: 20px;
+    font-family: Arial;
+}
+.image{
+    margin-left:520px;
+}
+.para{
+    text-align:center;
+    font-size:20px;
+}

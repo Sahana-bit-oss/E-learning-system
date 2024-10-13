@@ -1,0 +1,73 @@
+/*.background{
+    height: 100vh;
+    width: 100vh;
+    background-image: url("image/background.jpg");
+    background-position: cover;
+}*/
+.container{
+    font-family: "Arial";
+    color: white;
+    height:70px;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    background-color: rebeccapurple;
+    border-top-left-radius: 15px;
+    border-top-right-radius:15px;
+}
+.logo-image{
+    padding-top:5px;
+    padding-left: 18px;
+}
+.child-container{
+    height: 60px;
+    width: 275px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.title{
+    font-size: 36px;
+    padding-top: 9px;
+}
+#nav-container{
+    height:50px;
+    width: 460px;
+    color: white;
+    font-weight: 600;
+    padding-right: 40px;
+    padding-top: 20px;
+}
+#nav-container nav{
+    display: flex;
+    justify-content: space-between;
+    font-size: 25px;
+}
+#nav-container nav a{
+    color: white;
+    text-decoration: none;
+}
+.image-container{
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    height: 100%
+}
+.image-container div{
+    color: purple;
+    font-family: Arial;
+}
+.image{
+    height: 530px;
+    width: 700px;
+}
+.heading{
+    padding-left: 30px;
+    font-size: 50px;
+    padding-top: 120px;
+}
+.image-container div p{
+    color: hotpink;
+    font-size: 20px;
+    padding-left: 20px;
+}

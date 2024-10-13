@@ -1,0 +1,50 @@
+.container{
+    width: 1000px;
+    height: 610px;
+    background-color: lavender;
+    margin-left: 160px;
+    margin-top: 20px;
+    font-family: Arial;
+    border-radius: 80px;
+}
+.title{
+    text-align: center;
+    padding-top: 15px;
+}
+.table-container{
+    border-spacing:10px 25px;
+}
+.form-list{
+    padding-left: 23px;
+    font-size: 18px;
+}
+.input-box{
+    height:40px;
+    width:230px;
+    margin-left: 30px;
+    border-radius: 50px;
+    border: none;
+    padding-left: 20px;
+    font-size: 15px;
+}
+.accept{
+    padding-left: 70px;
+}
+.register-btn{
+    margin-left: 350px;
+    height: 38px;
+    width: 350px;
+    margin-top: 18px;
+    border-radius: 50px;
+    font-size: 20px;
+    background-color: purple;
+    color: white;
+    border: none;
+}
+.login{
+    margin-left: 390px;
+    margin-top: 25px;
+}
+.labels{
+    margin-left:38px;
+}
