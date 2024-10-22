@@ -8,7 +8,6 @@
                     <select id="option-box" required>
                         <option value="" selected disabled>Choose any one</option>
                         <option >Admin</option>
-                        <option>Professor</option>
                         <option>Student</option>
                     </select>
                 </td>
@@ -21,7 +20,7 @@
                         <span class="error-message" *ngIf="loginForm.controls['userName'].errors?.['required']" >*username is required</span>
                     </div>
                 </td>
-                
+
             </tr>
             <tr>
                 <td><label>E-mail</label></td>
@@ -43,7 +42,7 @@
                         <span class="error-message" *ngIf="!loginForm.controls['password'].errors?.['maxlength'] && loginForm.controls['password'].errors?.['pattern']" >*password contains letters,numbers,symbols</span>
                     </div>
                 </td>
-                
+
             </tr>
         </table>
         <div class="container">
@@ -53,6 +52,6 @@
         </div>
         <button class="login-btn" (click)="submit()">Login</button>
         <p class="register">Don't Have an Account ? <a routerLink="register">Register here</a></p>
-    </form>  
+    </form>
     </div>
 

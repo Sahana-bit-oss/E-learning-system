@@ -1,9 +1,11 @@
 .container{
     width: 1000px;
-    height: 550px;
+    height: 560px;
     background-color: lavender;
-    margin-left: 160px;
-    margin-top: 50px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
     font-family: Arial;
     border-radius: 80px;
 }

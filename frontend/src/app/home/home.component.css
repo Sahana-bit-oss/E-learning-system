@@ -88,8 +88,8 @@
     font-weight: 600;
 }
 .btn:hover{
-    background-color: white;
-    color:purple;
+    background-color: rgb(67, 67, 255);
+    color:white;
     cursor: pointer;
 }
 .start-btn{
