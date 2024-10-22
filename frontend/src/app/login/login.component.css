@@ -3,7 +3,7 @@
     width:510px;
     font-family: Arial;
     background-color: lavender;
-    margin-left: 450px;
+    margin-left: 420px;
     margin-top:50px;
     border-radius: 30px;
 }
@@ -17,7 +17,7 @@
 }
 .input-box{
     height:40px;
-    width:230px;
+    width:250px;
     margin-left: 30px;
     border-radius: 50px;
     border: none;
@@ -26,7 +26,7 @@
 }
 #option-box{
     height:40px;
-    width:250px;
+    width:270px;
     margin-left: 30px;
     border-radius: 50px;
     border: none;
@@ -34,20 +34,21 @@
     font-size: 15px;
 }
 .row{
-    border-spacing: 0 15px;   
+    border-spacing: 10px 20px;   
 }
-.remember{
-    margin-left: 40px;
+label{
+    display: inline-block;
+    width: 100px;
 }
 .container{
     height:50px;
-    width:420px;
+    width:440px;
     display:flex;
     justify-content: space-between;
-    margin-left: 40px;
+    font-size: 16px;
 }
 .login-btn{
-    margin-left: 120px;
+    margin-left: 83px;
     height: 38px;
     width: 270px;
     margin-top: 18px;
@@ -58,6 +59,25 @@
     border: none;
 }
 .register{
-    margin-left: 100px;
-    margin-top: 40px;
+    margin-left: 70px;
+    margin-top: 30px;
 }
+.check-box{
+    height: 18px;
+    width: 18px;
+    margin-top: 15px;
+}
+.remember{
+    margin-right: 170px;
+}
+.error-box{
+    width: 400px;
+    height: 5px;
+}
+.error-message{
+    font-size: 13px;
+    color:red;
+    padding-left: 50px;
+}
+
+

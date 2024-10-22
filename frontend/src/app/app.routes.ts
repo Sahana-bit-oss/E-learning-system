@@ -6,11 +6,13 @@ import { LoginComponent } from "./login/login.component";
 import { AdminRegisterComponent } from "./admin-register/admin-register.component";
 import { ProfessorRegisterComponent } from "./professor-register/professor-register.component";
 import { StudentRegisterComponent } from "./student-register/student-register.component";
+import { ContactComponent } from "./contact/contact.component";
 
 
 export const routes:Routes=[
     {path:'home',component:HomeComponent},
     {path:'home/about',component:AboutComponent},
+    {path:'home/contact',component:ContactComponent},
     {path:'home/register',component:RegisterComponent},
     {path:'home/login',component:LoginComponent},
     {path:'home/register/admin-register',component:AdminRegisterComponent},
@@ -21,6 +23,9 @@ export const routes:Routes=[
     {path:'home/register/professor-register/login',component:LoginComponent},
     {path:'home/register/student-register/login',component:LoginComponent}
 ]
+
+
+
 
 
 
