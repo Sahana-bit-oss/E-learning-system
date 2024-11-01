@@ -59,6 +59,7 @@ label{
     background-color: purple;
     color: white;
     border: none;
+    cursor: pointer;
 }
 .register{
     margin-left: 70px;

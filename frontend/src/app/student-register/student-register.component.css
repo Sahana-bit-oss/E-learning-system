@@ -43,6 +43,7 @@
     background-color: purple;
     color: white;
     border: none;
+    cursor: pointer;
 }
 .login{
     margin-left: 390px;
@@ -50,4 +51,14 @@
 }
 .labels{
     margin-left:38px;
+}
+
+.error-box{
+    width: 400px;
+    height: 5px;
+}
+.error-message{
+    font-size: 13px;
+    color:red;
+    padding-left: 50px;
 }

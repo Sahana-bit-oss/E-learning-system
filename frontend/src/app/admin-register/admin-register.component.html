@@ -1,35 +1,35 @@
 <div class="container">
-        <h1 class="title">Admin Registration</h1>
-        <form class="form-list">
-            <table class="table-container">
-                <tr>
-                    <td><label>Full Name</label></td>
-                    <td><input type="text" placeholder="Enter your first name" class="input-box"></td>
-                    <td><label class="labels">Gender</label></td>
-                    <td><input type="text" placeholder="Enter your gender" class="input-box"></td>
-                </tr>
-                <tr>
-                    <td><label>User Name</label></td>
-                    <td><input type="text" placeholder="Enter user name" class="input-box"></td>
-                    <td><label class="labels">Profession</label></td>
-                    <td><input type="text" placeholder="Enter your profession" class="input-box"></td>
-                </tr>
-                <tr>
-                    <td><label>Password</label></td>
-                    <td><input type="password" placeholder="Enter your password" class="input-box"></td>
-                    <td><label class="labels">E-mail</label></td>
-                    <td><input type="email" placeholder="Enter your email" class="input-box"></td>
-                </tr>
-                <tr>
-                    <td><label>Confirm Password</label></td>
-                    <td><input type="password" placeholder="Enter your Password" class="input-box" ></td>
-                    <td><label class="labels">Contact-no</label></td>
-                    <td><input type="tel" placeholder="Enter Contact No" class="input-box"></td>
-                </tr>
-            </table>
-            <p class="accept"><input type="checkbox">I accept the terms and Conditions</p>
-            <button class="register-btn">Register</button>
-        </form>
-        <p class="login">Already Have an Account ? <a routerLink="login">Login here</a></p>
+    <h1 class="title">Admin Registration</h1>
+    <form class="form-list" [formGroup]="registerForm" (ngSubmit)="save()">
+        <table class="table-container">
+            <tr>
+                <td><label>User Name</label></td>
+                <td><input type="text" placeholder="Enter user name" class="input-box" formControlName="employeename"></td>
+            </tr>
+            <tr>
+                <td><label>E-mail</label></td>
+                <td>
+                    <input type="email" class="input-box" formControlName="email" placeholder="Enter your e-mail" required>
+                    <div class="error-box" *ngIf="registerForm.controls['email'].invalid && (registerForm.controls['email'].touched || registerForm.controls['email'].dirty)">
+                        <span class="error-message" *ngIf="registerForm.controls['email'].errors?.['required']">*email is required</span>
+                        <span class="error-message" *ngIf="registerForm.controls['email'].errors?.['email']">*email is invalid</span>
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <td><label>Password</label></td>
+                <td>
+                    <input type="password" class="input-box" formControlName="password" placeholder="Enter your Password" required>
+                    <div class="error-box" *ngIf="registerForm.controls['password'].invalid && (registerForm.controls['password'].touched || registerForm.controls['password'].dirty)">
+                        <span class="error-message" *ngIf="registerForm.controls['password'].errors?.['required']">*password is required</span>
+                        <span class="error-message" *ngIf="registerForm.controls['password'].errors?.['maxlength']">*password must be 8 characters</span>
+                        <span class="error-message" *ngIf="!registerForm.controls['password'].errors?.['maxlength'] && registerForm.controls['password'].errors?.['pattern']">*password contains letters, numbers, symbols</span>
+                    </div>
+                </td>
+            </tr>
+        </table>
+        <p class="accept"><input type="checkbox">I accept the terms and Conditions</p>
+        <button class="register-btn" type="submit">Register</button>
+    </form>
+    <p class="login">Already Have an Account ? <a routerLink="login">Login here</a></p>
 </div>
-
