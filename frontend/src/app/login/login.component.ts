@@ -49,7 +49,7 @@ export class LoginComponent {
       password: password,
     };
 
-    this.http.post("http://localhost:8085/api/v1/employee/login", bodyData).subscribe((resultData: any) => {
+    this.http.post("http://localhost:8085/api/v1/user/login", bodyData).subscribe((resultData: any) => {
       console.log('Result Data:', resultData);
 
       if (resultData.message === "Email not exists") {

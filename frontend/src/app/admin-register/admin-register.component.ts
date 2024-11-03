@@ -18,7 +18,7 @@ export class AdminRegisterComponent {
   constructor(private fb: FormBuilder, private http: HttpClient, private router: Router) {
     // Initialize form group with form controls
     this.registerForm = this.fb.group({
-      employeename: ['', Validators.required],
+      username: ['', Validators.required],
       email: ['', [Validators.required, Validators.email]],
       password: new FormControl("", [
         Validators.required,
@@ -40,19 +40,19 @@ export class AdminRegisterComponent {
     const role = "Admin";
 
     const bodyData = {
-      employeename: this.registerForm.value.employeename,
+      username: this.registerForm.value.username,
       email: this.registerForm.value.email,
       password: this.registerForm.value.password,
       role: role
     };
 
-    console.log('employeename:', bodyData.employeename);
+    console.log('username:', bodyData.username);
     console.log('Email:', bodyData.email);
     console.log('Password:', bodyData.password);
 
-    this.http.post("http://localhost:8085/api/v1/employee/save", bodyData, { responseType: 'text' }).subscribe(
+    this.http.post("http://localhost:8085/api/v1/user/save", bodyData, { responseType: 'text' }).subscribe(
       (resultData: any) => {
-        alert("Employee Registered Successfully");
+        alert("Admin Registered Successfully");
         this.router.navigate(['/home']);
       },
       (error) => {
