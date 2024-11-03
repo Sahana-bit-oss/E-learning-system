@@ -1,4 +1,4 @@
-.form-container{
+/*.form-container{
     height:560px;
     width:510px;
     font-family: Arial;
@@ -81,6 +81,125 @@ label{
     font-size: 13px;
     color:red;
     padding-left: 50px;
+}*/
+
+.loginbackground{
+    height: 100vh;
+    width: 100%;
+    background-image: url('/image/background4.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
 }
+.logincontainer{
+    height: 560px;
+    width: 1000px;
+    display: flex;
+    flex-wrap:wrap;
+    margin-top: 0px;
+    position:absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    box-shadow: 0px 20px 25px rgb(71, 71, 71) ;
+    background-attachment: fixed;
+}
+.image-container{
+    height: 560px;
+    width:490px ;
+    background-color: blue;
+}
+.image{
+    padding-left: 65px;
+    padding-top: 40px;
+}
+.form-container{
+    height:560px;
+    width:510px;
+    font-family: Arial;
+    color: black;
+    position: absolute;
+    background-color: white;
+}
+.title{
+    text-align: center;
+    padding-top:10px;
+    color:blue;
+}
+.form-list{
+    padding-left: 40px;
+    font-size: 18px;
+}
+.input-box{
+    height:40px;
+    width:250px;
+    margin-left: 30px;
+    border-radius: 50px;
+    border: 1px solid white;
+    box-shadow: 0px 5px 5px rgb(192, 191, 191);
+    padding-left: 20px;
+    font-size: 15px;
+}
+#option-box{
+    height:45px;
+    width:270px;
+    margin-left: 30px;
+    border-radius: 50px;
+    border: 1px solid white;
+    box-shadow: 0px 5px 5px rgb(192, 191, 191);
+    padding-left: 20px;
+    font-size: 15px;
+}
+.row{
+    border-spacing: 10px 25px;
+}
+label{
+    display: inline-block;
+    width: 100px;
+}
+/*.remember-container{
+    height:50px;
+    width:440px;
+    display:flex;
+    justify-content: space-between;
+    font-size: 16px;
+}*/
+.login-btn{
+    margin-left: 83px;
+    height: 38px;
+    width: 270px;
+    margin-top: 25px;
+    border-radius: 50px;
+    font-size: 20px;
+    background-color: blue;
+    color: white;
+    border: none;
+}
+.register{
+    margin-left: 50px;
+    margin-top:50px;
+}
+.forgot{
+    padding-left: 270px;
+}
+/*.check-box{
+    height: 18px;
+    width: 18px;
+    margin-top: 15px;
+}
+.remember{
+    margin-right: 170px;
+}*/
+.error-box{
+    width: 400px;
+    height: 5px;
+}
+.error-message{
+    font-size: 13px;
+    color:red;
+    padding-left: 50px;
+}
+
+
 
 

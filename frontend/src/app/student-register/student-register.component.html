@@ -1,35 +1,63 @@
-<div class="container">
-    <h1 class="title">Student Registration</h1>
-    <form class="form-list" [formGroup]="registerForm" (ngSubmit)="save()">
-        <table class="table-container">
-            <tr>
-                <td><label>User Name</label></td>
-                <td><input type="text" placeholder="Enter user name" class="input-box" formControlName="employeename"></td>
-            </tr>
-            <tr>
-                <td><label>E-mail</label></td>
-                <td>
-                    <input type="email" class="input-box" formControlName="email" placeholder="Enter your e-mail" required>
-                    <div class="error-box" *ngIf="registerForm.controls['email'].invalid && (registerForm.controls['email'].touched || registerForm.controls['email'].dirty)">
-                        <span class="error-message" *ngIf="registerForm.controls['email'].errors?.['required']">*email is required</span>
-                        <span class="error-message" *ngIf="registerForm.controls['email'].errors?.['email']">*email is invalid</span>
-                    </div>
-                </td>
-            </tr>
-            <tr>
-                <td><label>Password</label></td>
-                <td>
-                    <input type="password" class="input-box" formControlName="password" placeholder="Enter your Password" required>
-                    <div class="error-box" *ngIf="registerForm.controls['password'].invalid && (registerForm.controls['password'].touched || registerForm.controls['password'].dirty)">
-                        <span class="error-message" *ngIf="registerForm.controls['password'].errors?.['required']">*password is required</span>
-                        <span class="error-message" *ngIf="registerForm.controls['password'].errors?.['maxlength']">*password must be 8 characters</span>
-                        <span class="error-message" *ngIf="!registerForm.controls['password'].errors?.['maxlength'] && registerForm.controls['password'].errors?.['pattern']">*password contains letters, numbers, symbols</span>
-                    </div>
-                </td>
-            </tr>
-        </table>
-        <p class="accept"><input type="checkbox">I accept the terms and Conditions</p>
-        <button class="register-btn" type="submit">Register</button>
-    </form>
-    <p class="login">Already Have an Account ? <a routerLink="login">Login here</a></p>
+<div class="registerbackground">
+    <div class="registercontainer">
+        <div class="image-container">
+            <img [src]="'/image/register.png'" class="image" width="350" height="370"><br>
+            <h2 style="color: white; text-align: center; padding-top: 30px;">Stay curious,Keep Learning <br>log in now!
+            </h2>
+        </div>
+        <div>
+        <div class="studentcontainer">
+            <h1 class="title">Student Registration</h1>
+            <form class="form-list" [formGroup]="registerForm" (ngSubmit)="save()">
+                <table class="table-container">
+                    <tr>
+                        <td><label>User Name</label></td>
+                        <td><input type="text" placeholder="Enter user name" class="input-box"
+                                formControlName="employeename"></td>
+                    </tr>
+                    <tr>
+                        <td><label>E-mail</label></td>
+                        <td>
+                            <input type="email" class="input-box" formControlName="email"
+                                placeholder="Enter your e-mail" required>
+                            <div class="error-box"
+                                *ngIf="registerForm.controls['email'].invalid && (registerForm.controls['email'].touched || registerForm.controls['email'].dirty)">
+                                <span class="error-message"
+                                    *ngIf="registerForm.controls['email'].errors?.['required']">*email is
+                                    required</span>
+                                <span class="error-message"
+                                    *ngIf="registerForm.controls['email'].errors?.['email']">*email is invalid</span>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><label>Password</label></td>
+                        <td>
+                            <input type="password" class="input-box" formControlName="password"
+                                placeholder="Enter your Password" required>
+                            <div class="error-box"
+                                *ngIf="registerForm.controls['password'].invalid && (registerForm.controls['password'].touched || registerForm.controls['password'].dirty)">
+                                <span class="error-message"
+                                    *ngIf="registerForm.controls['password'].errors?.['required']">*password is
+                                    required</span>
+                                <span class="error-message"
+                                    *ngIf="registerForm.controls['password'].errors?.['maxlength']">*password must be 8
+                                    characters</span>
+                                <span class="error-message"
+                                    *ngIf="!registerForm.controls['password'].errors?.['maxlength'] && registerForm.controls['password'].errors?.['pattern']">*password
+                                    contains letters, numbers, symbols</span>
+                            </div>
+                        </td>
+                    </tr>
+                </table>
+                <p class="accept"><input type="checkbox" formControlName="acceptTerms">I accept the terms and Conditions</p>
+                <div class=error-box *ngIf="registerForm.controls['acceptTerms'].invalid && (registerForm.controls['acceptTerms'].touched || registerForm.controls['acceptTerms'].dirty)">
+                    <span class="error-message" *ngIf="registerForm.controls['acceptTerms'].errors?.['required']" >*You must accept terms and conditions</span>
+                </div>        
+                <button class="register-btn" type="submit">Register</button>
+            </form>
+            <p class="login">Already Have an Account ? <a routerLink="/login" style="color: blue;">Login here</a></p>
+        </div>
+        </div>
+    </div>
 </div>

@@ -1,53 +1,81 @@
-.container{
+.registerbackground{
+    height: 100vh;
+    width: 100%;
+    background-image: url('/image/background4.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+.registercontainer{
+    height: 560px;
     width: 1000px;
-    height: 610px;
-    background-color: lavender;
-    position: absolute;
-    margin: 30px 0;
+    display: flex;
+    flex-wrap:wrap;
+    margin-top: 0px;
+    position:absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
+    box-shadow: 0px 20px 25px rgb(71, 71, 71) ;
+    background-attachment: fixed;
+}
+.image-container{
+    height: 560px;
+    width:490px ;
+    background-color: blue;
+}
+.image{
+    padding-left: 65px;
+    padding-top: 40px;
+}
+.studentcontainer{
+    height:560px;
+    width:510px;
     font-family: Arial;
-    border-radius: 80px;
+    color: black;
+    position: absolute;
+    background-color: white;
 }
 .title{
     text-align: center;
     padding-top: 15px;
+    color: blue;
 }
 .table-container{
     border-spacing:10px 25px;
 }
 .form-list{
-    padding-left: 23px;
+    padding-left: 43px;
     font-size: 18px;
 }
 .input-box{
     height:40px;
-    width:230px;
+    width:250px;
     margin-left: 30px;
     border-radius: 50px;
-    border: none;
+    border: 1px solid white;
+    box-shadow: 0px 5px 5px rgb(192, 191, 191);
     padding-left: 20px;
     font-size: 15px;
 }
 .accept{
-    padding-left: 70px;
+    padding-left: 10px;
 }
 .register-btn{
-    margin-left: 350px;
+    margin-left: 100px;
     height: 38px;
-    width: 350px;
-    margin-top: 5px;
+    width: 270px;
+    margin-top: 15px;
     border-radius: 50px;
     font-size: 20px;
-    background-color: purple;
+    background-color: blue;
     color: white;
     border: none;
     cursor: pointer;
 }
 .login{
-    margin-left: 390px;
-    margin-top: 25px;
+    margin-left: 100px;
+    margin-top: 40px;
 }
 .labels{
     margin-left:38px;

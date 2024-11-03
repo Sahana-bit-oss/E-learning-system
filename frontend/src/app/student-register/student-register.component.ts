@@ -25,8 +25,9 @@ export class StudentRegisterComponent {
         Validators.maxLength(8),
         Validators.pattern(
           '^(?=.*[A-Za-z])(?=.*\\d)(?=.*[!@#$%^&*])[A-Za-z\\d!@#$%^&*(),.?":{}|<>]{1,8}$'
-        )
-      ])
+        ),
+      ]),
+      acceptTerms:[false,Validators.requiredTrue]
     });
   }
 

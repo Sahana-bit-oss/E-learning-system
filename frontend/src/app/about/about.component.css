@@ -18,8 +18,25 @@
     background:rgba(41, 41, 224, 0.7);
     border-bottom-right-radius: 220px;
 }
+#nav-container{
+    width: 300px;
+    height: 100px;
+    color: white;
+    font-family: Arial;
+    font-size: 25px;
+    margin-left: 1000px;
+    margin-top: 50px;
+}
+#nav-container nav{
+    display: flex;
+    justify-content: space-around;
+}
+#nav-container nav a{
+    color: white;
+    text-decoration: none;
+}
 .heading-container{
-    margin-top: 150px;
+    margin-top: 100px;
     margin-left: 80px;
     color: white;
     font-family: Arial;
@@ -49,11 +66,55 @@
     padding-top: 30px;
     font-size: 20px;
 }
-.contact-container{
+/*.contact-container{
     height: 200px;
     width: 100%;
     background-color: indigo;
     color: white;
     font-family: Arial;
     margin-top: 70px;
+}*/
+
+.contact-container{
+    height: 300px;
+    width: 100%;
+    background-color: #181d38;
+    margin-top: 50px;
+    color: white;
+    display: flex;
+    justify-content: space-evenly;
+}
+.image-container{
+    width: 400px;
+    height: 70px;
+    margin-top: 100px;
+    margin-left: 50px;
+}
+.phone{
+    height: 50px;
+    width: 180px;
+    display: flex;
+    justify-content: space-between;
+    align-items:center ;
+}
+.message{
+    height: 50px;
+    width: 256px;
+    display: flex;
+    justify-content: space-between;
+    align-items:center ;
+}
+.location{
+    height: 80px;
+    width: 300px;
+    display: flex;
+    justify-content: space-between;
+    align-items:center ;
+}
+.image-container div{
+    padding-top: 30px;
+    width: 400px;
+    height: 100px;
+    display: flex;
+    justify-content: space-evenly;
 }

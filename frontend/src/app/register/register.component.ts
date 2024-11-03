@@ -13,6 +13,6 @@ import { Router, RouterLink } from '@angular/router';
 export class RegisterComponent {
     constructor(private router:Router){ }
     showForm(role:string){
-        this.router.navigate([`home/register/${role}`]);
+        this.router.navigate([`/${role}`]);
     }
 }

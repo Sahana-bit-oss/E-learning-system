@@ -1,16 +1,14 @@
-<!--<div class="container">
-<h1 class="title">About Us</h1>
-<img [src]="'image/background.jpeg'" height="300px" width="300px" class="image">
-<p class="para">Welcome to a world where learning has no boundaries! Our E-learning platform is designed for students, educators, and innovators who believe that education should be as dynamic and accessible as the digital age.
-    Imagine a classroom that fits right in your pocket—one that’s available anytime, anywhere, and adapts to your learning style. From immersive courses to interactive projects, we empower you to chart your own academic journey, whether you’re a curious student, a passionate professor, or an organized administrator.
-    Here, we believe that education is more than just grades and assignments—it’s about growth, collaboration, and innovation. Our platform is built with these principles at heart, offering personalized dashboards, real-time collaboration tools, and secure, role-based access for every user.
-    Dive in and discover a smarter way to learn. Because with us, the future of education isn’t just bright—it’s already here.
-</p>
-</div>-->
 <div class="aboutPage-container">
     <div class="container">
         <div class="blue-overlay">
+            <div id="nav-container">
+                <nav>
+                    <a routerLink="/home" routerLinkActive="active">Home</a>
+                    <a routerLink="/contact" routerLinkActive="active">ContactUs</a>
+                </nav>
+            </div>
             <div class="heading-container">
+                
                 <h1 style="font-size: 100px;">About Us</h1>
                 <p style="font-size: 20px;">Our LearnPro Platform offers High-quality courses designed to help you learn and grow at your own pace<br>We are commited to delivering an engaging and accessible learning experience for everyone</p>
             </div>
@@ -37,5 +35,33 @@
                 <h2>Skilled<br>Instructors</h2>
                 <p>Courses taught by<br> qualified professionals</p>
             </div>
+    </div>
+    <div class="contact-container">
+        <div>
+        <h2 style="padding-top: 10px;">Contact</h2>
+        <div class="phone">
+            <img [src]="'image/phone.png'" width="35" height="35" id="phone-logo">
+            <p style="text-align: center;">+91 5478 6743 33</p>
+        </div>
+         <br>
+         <div class="message">
+            <img [src]="'image/message.png'" width="35" height="35" id="phone-logo">
+            <p style="text-align: center;">e-learningportal&#64;gmail.com</p>
+        </div>
+         <br>
+         <div class="location">
+            <img [src]="'image/location.png'" width="35" height="35" id="phone-logo">
+            <p style="text-align: center;">132 Dartmouth street Boston,Massachusetts 02156<br>United states</p>
+        </div>
+        </div>
+        <img [src]="'image/student1.jpg'" height="250" width="350" style="margin-left: 60px; margin-top: 25px;">
+         <div class="image-container">
+            <p>&copy;2024 Copyrights:LearnPro Portal.All Rights Reserved</p>
+            <div>
+            <img [src]="'image/twitter.png'" width="40" height="40">
+            <img [src]="'image/insta.png'" width="40" height="40">
+            <img [src]="'image/linkedin.png'" width="40" height="40">
+             </div>
+         </div>
     </div>
 </div>

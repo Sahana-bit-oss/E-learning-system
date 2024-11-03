@@ -1,43 +1,69 @@
-<div class="form-container">
-    <h1 class="title">Login</h1>
-    <form class="form-list" [formGroup]="loginForm" (ngSubmit)="submit()">
-        <table class="row">
-            <tr>
-                <td class="column"><label>Select Role</label></td>
-                <td>
-                    <select id="option-box" formControlName="role" required>
-                        <option value="" selected disabled>Choose any one</option>
-                        <option value="Admin">Admin</option>
-                        <option value="Student">Student</option>
-                    </select>
-                </td>
-            </tr>
-            <tr>
-                <td><label>E-mail</label></td>
-                <td>
-                    <input type="email" class="input-box" formControlName="email" placeholder="Enter your e-mail" required>
-                    <div class="error-box" *ngIf="loginForm.controls['email'].invalid && (loginForm.controls['email'].touched || loginForm.controls['email'].dirty || isFormSubmitted)">
-                        <span class="error-message" *ngIf="loginForm.controls['email'].errors?.['required']">*email is required</span>
-                        <span class="error-message" *ngIf="loginForm.controls['email'].errors?.['email']">*email is invalid</span>
-                    </div>
-                </td>
-            </tr>
-            <tr>
-                <td><label>Password</label></td>
-                <td>
-                    <input type="password" class="input-box" formControlName="password" placeholder="Enter your Password" required>
-                    <div class="error-box" *ngIf="loginForm.controls['password'].invalid && (loginForm.controls['password'].touched || loginForm.controls['password'].dirty || isFormSubmitted)">
-                        <span class="error-message" *ngIf="loginForm.controls['password'].errors?.['required']">*password is required</span>
-                        <span class="error-message" *ngIf="loginForm.controls['password'].errors?.['maxlength']">*password must be 8 characters</span>
-                        <span class="error-message" *ngIf="!loginForm.controls['password'].errors?.['maxlength'] && loginForm.controls['password'].errors?.['pattern']">*password contains letters, numbers, symbols</span>
-                    </div>
-                </td>
-            </tr>
-        </table>
-        <div class="container">
-            <p>Forgot Password?</p>
+<div class="loginbackground">
+    <div class="logincontainer">
+        <div class="image-container">
+            <img [src]="'/image/loginimage.png'" class="image" width="350" height="370"><br>
+            <h2 style="color: white; text-align: center; padding-top: 30px;">Stay curious,Keep Learning <br>log in now!
+            </h2>
         </div>
-        <button type="submit" class="login-btn">Login</button>
-        <p class="register">Don't Have an Account? <a routerLink="register">Register here</a></p>
-    </form>
+        <div class="loginform-container">
+            <div class="form-container">
+                <h1 class="title">Login</h1>
+                <form class="form-list" [formGroup]="loginForm" (ngSubmit)="submit()">
+                    <table class="row">
+                        <tr>
+                            <td class="column"><label>Select Role</label></td>
+                            <td>
+                                <select id="option-box" formControlName="role" required>
+                                    <option value="" selected disabled>Choose any one</option>
+                                    <option value="Admin">Admin</option>
+                                    <option value="Student">Student</option>
+                                </select>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><label>E-mail</label></td>
+                            <td>
+                                <input type="email" class="input-box" formControlName="email"
+                                    placeholder="Enter your e-mail" required>
+                                <div class="error-box"
+                                    *ngIf="loginForm.controls['email'].invalid && (loginForm.controls['email'].touched || loginForm.controls['email'].dirty || isFormSubmitted)">
+                                    <span class="error-message"
+                                        *ngIf="loginForm.controls['email'].errors?.['required']">*email
+                                        is required</span>
+                                    <span class="error-message"
+                                        *ngIf="loginForm.controls['email'].errors?.['email']">*email
+                                        is invalid</span>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><label>Password</label></td>
+                            <td>
+                                <input type="password" class="input-box" formControlName="password"
+                                    placeholder="Enter your Password" required>
+                                <div class="error-box"
+                                    *ngIf="loginForm.controls['password'].invalid && (loginForm.controls['password'].touched || loginForm.controls['password'].dirty || isFormSubmitted)">
+                                    <span class="error-message"
+                                        *ngIf="loginForm.controls['password'].errors?.['required']">*password is
+                                        required</span>
+                                    <span class="error-message"
+                                        *ngIf="loginForm.controls['password'].errors?.['maxlength']">*password must be 8
+                                        characters</span>
+                                    <span class="error-message"
+                                        *ngIf="!loginForm.controls['password'].errors?.['maxlength'] && loginForm.controls['password'].errors?.['pattern']">*password
+                                        contains letters, numbers, symbols</span>
+                                </div>
+                            </td>
+                        </tr>
+                    </table>
+                    <div class="forgot">
+                        <p><a routerLink="resetpassword" style="color: blue;">Forgot Password?</a></p>
+                    </div>
+                    <button type="submit" class="login-btn">Login</button>
+                    <p class="register">Don't Have an Account? <a routerLink="/register" style="color: blue;">Register
+                            here</a></p>
+                </form>
+            </div>
+        </div>
+    </div>
 </div>
