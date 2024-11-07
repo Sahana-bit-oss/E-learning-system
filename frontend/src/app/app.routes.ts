@@ -7,17 +7,23 @@ import { AdminRegisterComponent } from "./admin-register/admin-register.componen
 import { StudentRegisterComponent } from "./student-register/student-register.component";
 import { ContactComponent } from "./contact/contact.component";
 import { ResetpasswordComponent } from "./resetpassword/resetpassword.component";
+import { CoursesComponent } from "./courses/courses.component";
+import { AdminDashboardComponent } from "./admin-dashboard/admin-dashboard.component";
+import { UserDashboardComponent } from "./user-dashboard/user-dashboard.component";
 
 export const routes: Routes =
    [ { path: '', redirectTo: 'home', pathMatch: 'full' },
     { path: 'home', component: HomeComponent },
     { path: 'about', component: AboutComponent },
     { path: 'contact', component: ContactComponent },
+    {path:'courses',component:CoursesComponent},
     { path: 'register', component: RegisterComponent },
     { path: 'login', component: LoginComponent },
     { path: 'admin-register', component: AdminRegisterComponent },
     { path: 'student-register', component: StudentRegisterComponent },
-    {path:'login/resetpassword',component:ResetpasswordComponent},
+    {path:'resetpassword',component:ResetpasswordComponent},
+    {path:'admin-dashboard',component:AdminDashboardComponent},
+    {path:'user-dashboard',component:UserDashboardComponent}
 
 ];
 export const appRoutingProviders=[provideRouter(routes)];

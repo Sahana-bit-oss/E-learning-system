@@ -1,0 +1,159 @@
+<div class="admin-dashboard">
+    <div class="heading-container">
+        <div class="container">
+            <button class="menu" (click)="showSideNav()"></button>
+            <h2 class="title">User Dashboard</h2>
+        </div>
+        <div class="home">
+            <img [src]="'/image/home.png'" height="26" width="26">
+            <h3 routerLink="/home">Home</h3>
+          </div>
+            <div class="log-out">
+                <img [src]="'/image/log-out.png'" height="26" width="26">
+                <h3>Log out</h3>
+            </div>
+    </div>
+    <div class="sideNav" [class.menuOpen]="isVisible">
+        <button class="btn"><img [src]="'image/student.png'" height="90px" width="85px"></button>
+        <hr style="margin-bottom: 30px;">
+        <div class="menu-items">
+          <button (click)="setActiveMenu('profile')">Profile</button><br>
+          <button (click)="setActiveMenu('enrolled-courses')">Enrolled Courses</button><br>
+          <button (click)="setActiveMenu('progress')">Progress</button><br>
+          <button (click)="setActiveMenu('favourites')">Favourites</button>
+          <button (click)="setActiveMenu('feedback')">FeedBack & Support</button>
+        </div>
+      </div>
+</div>
+
+<div *ngIf="activeMenu === 'profile'" class="profile-section">
+    <h2 style="font-family: Arial; text-align: center; margin-top: 50px;">User Profile</h2>
+  
+    <div class="profile-info">
+      <div class="profile-field">
+        <label style="margin-right: 20px;">Name:</label>
+        <span>{{ userProfile.name }}</span>
+      </div>
+      <div class="profile-field">
+        <label style="margin-right: 20px;">Email:</label>
+        <span>{{ userProfile.email }}</span>
+      </div>
+      <div class="profile-field">
+        <label style="margin-right: 20px;">Joined:</label>
+        <span>{{ userProfile.joinDate | date:'mediumDate' }}</span>
+      </div>
+      <button (click)="editProfile()" class="edit-btn">Edit Profile</button>
+  
+    </div>
+</div>
+  
+   
+    <div *ngIf="activeMenu === 'edit-profile'" class="edit-profile-form">
+      <h3>Edit Profile</h3>
+      <label>
+        Name: <br>
+        <input [(ngModel)]="editedProfile.name" />
+      </label><br>
+      <label>
+        Email: <br>
+        <input [(ngModel)]="editedProfile.email" />
+      </label> 
+      <button (click)="saveProfile()" class="save-button">Save</button>
+      <button (click)="cancelEdit()" class="cancel-button">Cancel</button>
+
+    </div>
+
+
+    <div *ngIf="activeMenu === 'enrolled-courses'" class="enrolled-courses-section">
+      <h2>Your Enrolled Courses</h2>
+      
+      <table *ngIf="enrolledCourses.length > 0; else noCoursesMessage" class="enrolled-courses-table">
+        <thead>
+          <tr>
+            <th>Course Name</th>
+            <th>Instructor</th>
+            <th>Duration</th>
+            <th>Progress</th>
+            <th>Status</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let course of enrolledCourses">
+            <td>{{ course.name }}</td>
+            <td>{{ course.instructor }}</td>
+            <td>{{ course.duration }}</td>
+            <td>{{ course.progress }}%</td>
+            <td>{{ course.status }}</td>
+          </tr>
+        </tbody>
+      </table>
+    
+      <ng-template #noCoursesMessage>
+        <p>No courses enrolled yet. Start exploring and enroll in a course!</p>
+      </ng-template>
+    </div>
+
+  
+    <div *ngIf="activeMenu === 'progress'" class="progress-section">
+      <h2>Course Progress</h2>
+    
+      <table *ngIf="enrolledCourses.length > 0; else noCoursesMessage" class="progress-table">
+        <thead>
+          <tr>
+            <th>Course Name</th>
+            <th>Progress</th>
+            <th>Status</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let course of enrolledCourses">
+            <td>{{ course.name }}</td>
+            <td>
+             
+              <div class="progress-container">
+                <div class="progress-bar" [style.width.%]="course.progress"></div>
+                <span class="progress-text">{{ course.progress }}%</span>
+              </div>
+            </td>
+            <td>{{ course.progress === 100 ? 'Completed' : 'In Progress' }}</td>
+          </tr>
+        </tbody>
+      </table>
+    
+    
+      <ng-template #noCoursesMessage>
+        <p>No courses enrolled yet. Start exploring and enroll in a course!</p>
+      </ng-template>
+    </div>
+
+
+    <div *ngIf="activeMenu === 'favourites'" class="favorites-section">
+      <h2>Your Favorite Courses</h2>
+    
+      <div *ngIf="favoriteCourses.length > 0; else noFavoritesMessage" class="favorite-courses-list">
+        <table class="favorite-courses-table">
+          <thead>
+            <tr>
+              <th>Course Name</th>
+              <th>Instructor</th>
+              <th>Duration</th>
+              <th>Remove</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let course of favoriteCourses">
+              <td>{{ course.name }}</td>
+              <td>{{ course.instructor }}</td>
+              <td>{{ course.duration }}</td>
+              <td>
+                <button (click)="removeFromFavorites(course)" class="del-btn">Remove</button>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    
+      <ng-template #noFavoritesMessage>
+        <p>You have no favorite courses yet. Start exploring and add courses to your favorites!</p>
+      </ng-template>
+    </div>

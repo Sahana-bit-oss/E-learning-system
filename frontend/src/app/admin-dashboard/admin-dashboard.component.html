@@ -1,0 +1,231 @@
+<div class="admin-dashboard">
+  <div class="heading-container">
+    <div class="container">
+      <button class="menu" (click)="showSideNav()"></button>
+      <h2 class="title">Admin Dashboard</h2>
+    </div>
+    <div class="home">
+      <img [src]="'/image/home.png'" height="26" width="26">
+      <h3 routerLink="/home">Home</h3>
+    </div>
+    <div class="log-out">
+      <img [src]="'/image/log-out.png'" height="26" width="26">
+      <h3>Log out</h3>
+    </div>
+  </div>
+  <div class="sideNav" [class.menuOpen]="isVisible">
+    <button class="btn"><img [src]="'image/admin.png'" height="90px" width="85px"></button>
+    <hr style="margin-bottom: 30px;">
+    <div class="menu-items">
+      <button (click)="setActiveMenu('dashboard')">Dashboard</button><br>
+      <button (click)="setActiveMenu('courses')">Courses</button><br>
+      <button (click)="setActiveMenu('users')">Users</button><br>
+      <button (click)="setActiveMenu('enrollments')">Enrollments</button>
+      <button (click)="setActiveMenu('feedback')">FeedBack & Support</button>
+    </div>
+  </div>
+</div>
+
+<div *ngIf="activeMenu==='dashboard'" class="dashboard">
+  <h1 class="dashboard-heading">Welcome To Admin Dashboard</h1>
+  <div class="dashboard-container">
+    <div  [ngClass]="{ 'hover': isHoverCourses }" (mouseenter)="isHoverCourses= true" (mouseleave)="isHoverCourses=false">
+      <img [src]="isHoverCourses ? 'image/course-icon1.png' : 'image/course-icon.png'" />
+      <h2 style="padding-left: 80px;">Total Courses</h2>
+      <h4 style="padding-left: 120px;">0 Courses</h4>
+    </div>
+    <div  [ngClass]="{ 'hover': isHoverUsers }" (mouseenter)="isHoverUsers= true" (mouseleave)="isHoverUsers=false">
+      <img [src]="isHoverUsers ? 'image/usersicon1.png' : 'image/usersicon.png'" />
+      <h2 style="padding-left: 90px;">Total Users</h2>
+      <h4 style="padding-left: 130px;">0 Users</h4>
+    </div>
+    <div   [ngClass]="{ 'hover': isHoverEnrollments }" (mouseenter)="isHoverEnrollments= true" (mouseleave)="isHoverEnrollments=false">
+      <img [src]="isHoverEnrollments ? 'image/enrolll-icon1.png' : 'image/enroll-icon.png'" />
+      <h2 style="padding-left:70px;">Enrolled courses</h2>
+      <h4 style="padding-left: 120px;">0 Enrolled</h4>
+    </div>
+    <div   [ngClass]="{ 'hover': isHoverSales }" (mouseenter)="isHoverSales= true" (mouseleave)="isHoverSales=false">
+      <img [src]="isHoverSales ? 'image/sales1.png' : 'image/sales.png'" />
+      <h2 style="padding-left: 100px;">Total Sales</h2>
+      <h4 style="padding-left: 120px;">0 Sales</h4>
+    </div>
+  </div>
+
+</div>
+<div *ngIf="activeMenu==='courses'">
+  <h2 style="margin-left: 710px; font-size: 28px; font-family: Arial;">Course List</h2>
+  <button class="add-btn" (click)="setActiveMenu('add-course')">Add Course</button>
+  <table class="course-table">
+    <thead>
+      <tr>
+        <th>S.no</th>
+        <th>Course Name</th>
+        <th>Skill Level</th>
+        <th>Course Description</th>
+        <th>Duration</th>
+        <th>Price</th>
+        <th>Image</th>
+        <th>Update</th>
+        <th>Delete</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let course of courses; let i = index">
+        <td>{{ i + 1 }}</td>
+        <td>{{ course.name }}</td>
+        <td>{{ course.skillLevel }}</td>
+        <td>{{ course.description }}</td>
+        <td>{{ course.duration }}</td>
+        <td>{{ course.price }}</td>
+        <td><img *ngIf="course.image" [src]="course.image" alt="Course Image" width="50" /></td>
+        <td><button class="edit-btn" (click)="editCourse(course)">Edit</button></td>
+        <td><button class="del-btn" (click)="deleteCourse(course.id)">Delete</button></td>
+      </tr>
+    </tbody>
+  </table>
+  <div *ngIf="courses.length > 0" class="course-cards">
+    <div *ngFor="let course of courses" class="course-card">
+      <h3>{{ course.name }}</h3>
+      <p><strong>Skill Level:</strong> {{ course.skillLevel }}</p>
+      <p><strong>Description:</strong> {{ course.description }}</p>
+      <p><strong>Duration:</strong> {{ course.duration }}</p>
+      <p><strong>Price:</strong> {{ course.price }}</p>
+      <img *ngIf="course.image" [src]="course.image" alt="Course Image" width="100" />
+    </div>
+  </div>
+</div>
+
+<div *ngIf="activeMenu === 'add-course'">
+  <div class="addcourseform-container">
+    <h2 style="font-family: Arial;">{{ editingCourse ? 'Update Course' : 'Add Course' }}</h2>
+    <form [formGroup]="courseForm" (ngSubmit)="addOrUpdateCourse()">
+      <label>Course Name:<br>
+        <input formControlName="name" />
+      </label>
+      <label>Skill Level: <br>
+        <input formControlName="skillLevel" />
+      </label>
+      <label>Course Description: <br>
+        <textarea placeholder="Enter course description..." class="text-box"></textarea>
+      </label>
+      <label>Duration: <br>
+        <input formControlName="duration"/>
+      </label>
+      <label>Price: <br>
+        <input formControlName="price"  />
+      </label> 
+      <label for="imageUpload">Choose Image:</label>
+      <input type="file" id="imageUpload" (change)="onFileSelected($event)" accept="image/*" />
+
+      <button (click)="addOrUpdateCourse()" type="submit">{{ editingCourse ? 'Update Course' : 'Add Course' }}</button>
+    </form>
+    <div *ngIf="imagePreview">
+      <h4 style="margin-top: 50px; font-size: 15px; font-family: Arial;">Image Preview:</h4>
+      <img [src]="imagePreview" alt="Image preview" width="200" />
+    </div>
+  </div>
+</div>
+
+
+
+<div *ngIf="activeMenu === 'users'" class="user-list">
+  <h2 style="margin-left: 700px; font-family: Arial">User List</h2>
+  <button class="add-btn" (click)="setActiveMenu('add-user')" style="margin-left:670px;">Add User</button>
+  <table class="user-table">
+    <thead>
+      <tr>
+        <th>ID</th>
+        <th>Name</th>
+        <th>Email</th>
+        <th>Role</th>
+        <th>Actions</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let user of users">
+        <td>{{ user.id }}</td>
+        <td>{{ user.name }}</td>
+        <td>{{ user.email }}</td>
+        <td>{{ user.role }}</td>
+        <td>
+          <button class="edit-btn" style="margin-right: 10px;" (click)="editUser(user)">Edit</button>
+          <button class="del-btn" (click)="deleteUser(user.id)">Delete</button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+
+  <p *ngIf="users.length === 0" style="padding-left: 655px; font-family: Arial; font-size: 20px;" >No users available.</p>
+</div>
+
+<div *ngIf="activeMenu === 'add-user'" class="add-user-form">
+  <h2>{{ editingUser ? 'Update User' : 'Add User' }}</h2>
+  <form [formGroup]="userForm" (ngSubmit)="addOrUpdateUser()">
+    <label>Name: <br>
+      <input formControlName="name" />
+    </label><br>
+    <label>Email: <br>
+      <input formControlName="email" />
+    </label><br>
+    <label>Role: <br>
+      <input formControlName="role" />
+    </label><br>
+    <button type="submit">{{ editingUser ? 'Update User' : 'Add User' }}</button>
+  </form>
+</div>
+
+
+<div *ngIf="activeMenu === 'enrollments'" class="enrollment-list">
+  <h2 style="margin-left: 700px; font-family: Arial">Enrollments List</h2>
+  <button class="add-btn" style="width:200px;" (click)="setActiveMenu('add-enrollment')">Add Enrollment</button>
+  <table class="enrollment-table">
+    <thead>
+      <tr>
+        <th>ID</th>
+        <th>Student Name</th>
+        <th>Course Name</th>
+        <th>Enrollment Date</th>
+        <th>Status</th>
+        <th>Actions</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let enrollment of enrollments">
+        <td>{{ enrollment.id }}</td>
+        <td>{{ enrollment.studentName }}</td>
+        <td>{{ enrollment.courseName }}</td>
+        <td>{{ enrollment.enrollmentDate }}</td>
+        <td>{{ enrollment.status }}</td>
+        <td>
+          <button class="edit-btn" (click)="editEnrollment(enrollment)">Edit</button>
+          <button class="del-btn" style="margin-left: 10px;" (click)="deleteEnrollment(enrollment.id)">Delete</button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+
+  <p *ngIf="enrollments.length === 0" style="padding-left: 655px; font-family: Arial; font-size: 20px;">No enrollments available.</p>
+</div>
+
+<div *ngIf="activeMenu === 'add-enrollment'" class="add-enrollment-form">
+  <h2>{{ editingEnrollment ? 'Update Enrollment' : 'Add Enrollment' }}</h2>
+  <form [formGroup]="enrollmentForm" (ngSubmit)="addOrUpdateEnrollment()">
+    <label>Student Name:
+      <input formControlName="studentName" />
+    </label>
+    <label>Course Name:
+      <input formControlName="courseName" />
+    </label>
+    <label>Enrollment Date:
+      <input type="date" formControlName="enrollmentDate" />
+    </label>
+    <label>Status: <br>
+      <select formControlName="status">
+        <option value="Active">Active</option>
+        <option value="Completed">Completed</option>
+        <option value="Cancelled">Cancelled</option>
+      </select>
+    </label>
+    <button type="submit">{{ editingEnrollment ? 'Update Enrollment' : 'Add Enrollment' }}</button>
+  </form>
+</div>

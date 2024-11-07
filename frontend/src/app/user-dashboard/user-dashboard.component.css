@@ -1,0 +1,302 @@
+.heading-container {
+    font-family: "Arial";
+    color: white;
+    height: 65px;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    background-color: #0D7C66;
+  }
+  
+  .container {
+    height: 65px;
+    width: 300px;
+    display: flex;
+    flex-wrap: wrap;
+    color: white;
+    background-color: #0D7C66;
+  }
+  
+  .menu {
+    height: 40px;
+    width: 40px;
+    background-image: url('/image/menu.png');
+    background-position: cover;
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-color:#0D7C66;
+    border: none;
+    margin-left: 30px;
+    margin-top: 12px;
+  }
+  
+  .title {
+    margin-left: 20px;
+    color: white;
+    font-family: Arial;
+    text-align: center;
+  }
+  
+  .sideNav {
+    height: 605px;
+    width: 240px;
+    color: white;
+    font-family: Arial;
+    background-color: #0D7C66;
+    position: fixed;
+    left: -300px;
+    transition: left 1s ease;
+  }
+  
+  .sideNav.menuOpen {
+    left: 0;
+  }
+  
+  .btn {
+    height: 100px;
+    width: 100px;
+    border-radius: 50%;
+    cursor: pointer;
+    margin-left: 70px;
+    margin-top: 15px;
+    margin-bottom: 15px;
+  }
+  
+  .log-out {
+    height: 50px;
+    width: 100px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-right: 40px;
+    margin-top: 10px;
+    color: white;
+  }
+  
+  .home {
+    margin-left: 730px;
+    margin-top: 10px;
+    cursor: pointer;
+    color: white;
+    height: 50px;
+    width: 83px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .menu-items button {
+    width: 240px;
+    height: 65px;
+    background-color: #0D7C68 ;
+    color: white;
+    font-family: Arial;
+    font-size: 20px;
+    border: none;
+  }
+  
+  .menu-items button:hover {
+    background-color: lavender;
+    transition: opacity 0.3s;
+    color: rebeccapurple;
+  }
+  
+  .progress-container {
+    position: relative;
+    width: 150px;
+    height: 20px;
+    background-color: #e0e0e0;
+    border-radius: 10px;
+    overflow: hidden;
+    margin: 10px 0;
+    
+  }
+  
+  .progress-bar {
+    height: 100%;
+    background-color: red; 
+    border-radius: 10px 0 0 10px;
+    transition: width 0.3s ease;
+  }
+  
+  .progress-text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 0.9em;
+    color: #fff;
+    font-weight: bold;
+  }
+  .profile-section{
+    height: 400px;
+    width: 400px;
+    border: 1px solid black;
+    margin-left: 500px;
+    margin-top:70px;
+  }
+  .profile-info{
+    margin-left: 50px;
+    margin-top: 30px;
+  }
+  .profile-field{
+    font-family: Arial;
+    font-size: 23px;
+    margin-bottom: 40px;
+  }
+  
+.edit-btn {
+  height: 42px;
+  width: 150px;
+  background-color: green;
+  border: none;
+  font-size: 20px;
+  color: white;
+}
+
+.enrolled-courses-table {
+  width: 1100px;
+  border-collapse: collapse;
+  margin-left: 250px;
+  margin-top: 50px;
+}
+
+.enrolled-courses-table th,
+.enrolled-courses-table td {
+  padding: 10px;
+  border: 1px solid #ddd;
+  text-align: center;
+}
+
+.enrolled-courses-table th {
+  background-color: rgb(68, 206, 68);
+  border: 1px solid black;
+  color: white;
+  padding: 15px;
+  font-size: 20px;
+  font-family: Arial;
+}
+
+.enrolled-courses-section h2 {
+  margin-left: 600px;
+  margin-bottom: 20px;
+  font-family: Arial;
+  margin-top: 50px;
+}
+.progress-table {
+  width: 1100px;
+  border-collapse: collapse;
+  margin-left: 250px;
+  margin-top: 50px;
+}
+
+.progress-table th,
+.progress-table td {
+  padding: 10px;
+  border: 1px solid #ddd;
+  text-align: center;
+}
+
+.progress-table th {
+  background-color: rgb(68, 206, 68);
+  border: 1px solid black;
+  color: white;
+  padding: 15px;
+  font-size: 20px;
+  font-family: Arial;
+}
+
+.progress-section h2 {
+  margin-left: 700px;
+  margin-bottom: 20px;
+  font-family: Arial;
+  margin-top: 50px;
+}
+
+.favorite-courses-table {
+  width: 1100px;
+  border-collapse: collapse;
+  margin-left: 250px;
+  margin-top: 50px;
+}
+
+.favorite-courses-table th,
+.favorite-courses-table td {
+  padding: 10px;
+  border: 1px solid #ddd;
+  text-align: center;
+}
+
+.favorite-courses-table th {
+  background-color: rgb(68, 206, 68);
+  border: 1px solid black;
+  color: white;
+  padding: 15px;
+  font-size: 20px;
+  font-family: Arial;
+}
+
+.favorites-section h2 {
+  margin-left: 700px;
+  margin-bottom: 20px;
+  font-family: Arial;
+  margin-top: 50px;
+}
+.del-btn {
+  height: 40px;
+  width: 90px;
+  background-color: red;
+  border: none;
+  font-size: 18px;
+  color: white;
+}
+.edit-profile-form {
+  margin-left: 500px;
+  border: 1px solid black;
+  width: 450px;
+  height: 400px;
+  margin-top: 30px;
+  border-radius: 15px;
+}
+.edit-profile-form h2 {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.edit-profile-form form {
+  display: flex;
+  flex-direction: column;
+  margin-left: 60px;
+}
+
+.edit-profile-form label {
+  margin-bottom: 15px;
+  font-size: 20px;
+  font-family: Arial;
+}
+
+.edit-profile-form input {
+  margin-top: 10px;
+  padding: 8px;
+  width: 300px;
+  border-radius: 4px;
+  border: 1px solid #ccc;
+}
+
+
+.edit-profile-form button {
+  height: 35px;
+  width: 350px;
+  margin-top: 20px;
+  font-family: Arial;
+  font-size: 20px;
+  background-color:#FF1493;
+  color: white;
+  border: none;
+}
+
+.edit-profile-form button:hover {
+  background-color: white;
+  color: #FF1493;
+  border: 1px solid #FF1493;
+}

@@ -1,0 +1,172 @@
+.container{
+    height: 100%;
+    width: 100%;
+}
+.background-container{
+    height: 500px;
+    width: 100%;
+    background-image: url('/image/coursesbackground1.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    position: relative;
+    display: inline-block;
+}
+.black-overlay{
+    height: 500px;
+    width: 100%;
+    position: absolute;
+    top:0;
+    left: 0;
+    background:rgba(8, 0, 0, 0.5); 
+}
+.container{
+    font-family: "Arial";
+    color: white;
+    height:75px;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    /*background-color: rebeccapurple;*/
+}
+.logo-image{
+    padding-top:5px;
+    padding-left: 18px;
+}
+.child-container{
+    height: 60px;
+    width: 250px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 10px;
+    margin-left: 30px;
+}
+.title{
+    font-size: 36px;
+    padding-top: 9px;
+    color: white;
+}
+#nav-container{
+    height:50px;
+    width: 380px;
+    color: white;
+    font-weight: 600;
+    padding-right: 40px;
+    padding-top: 30px;
+}
+#nav-container nav{
+    display: flex;
+    justify-content: space-between;
+    font-size: 25px;
+    align-items: center;
+}
+#nav-container nav a{
+    color: white;
+    text-decoration: none;
+}
+.heading{
+    text-align: center;
+    color: white;
+    font-family: Arial;
+    font-size: 50px;
+    margin-top: 200px;
+}
+.courses-container{
+    height: 100px;
+    width: 1100px;
+    background-color: lavender;
+    margin-top: 550px;
+    margin-left: 120px;
+}
+.courses-container div{
+    height: 70px;
+    width: 800px;
+    display: flex;
+    justify-content: space-evenly;
+    padding-top: 28px;
+    padding-left: 160px;
+}
+.input-box{
+    height: 40px;
+    width: 245px;
+    border:1px solid rgb(168, 168, 168);
+    border-radius: 5px;
+    font-size: 15px;
+    padding-left: 15px;
+}
+.category{
+    height: 45px;
+    width: 245px;
+    border:1px solid rgb(168, 168, 168);
+    border-radius: 5px;
+    font-size: 15px;
+    padding-left: 15px;
+}
+.search-btn{
+    height: 45px;
+    width: 200px;
+    border:1px solid rgb(168, 168, 168);
+    border-radius: 5px;
+    background-color: purple;
+    color: white;
+    font-size: 20px;
+}
+.course-heading{
+    padding-top: 80px;
+    padding-left: 90px;
+    font-family: Arial;
+}
+.technologycourses-list{
+    height: 500px;
+    width: 100%;
+    display: flex;
+    justify-content: space-evenly;
+}
+.box{
+    height: 512px;
+    border: 1px solid rgb(179, 178, 178);
+    margin-top: 25px;
+    border-radius: 7px;
+}
+.course-image{
+    height: 220px;
+    width: 20rem;
+    border-top-left-radius: 7px;
+    border-top-right-radius: 7px;
+}
+.course-details h2{
+    font-size: 23px;
+    font-family: Arial;
+    padding-left: 10px;
+}
+.course-details p{
+    font-family: Arial;
+    font-size: 15px;
+    padding-left: 10px;
+}
+.box p{
+    font-family: Arial;
+    padding-left: 10px;
+    padding-top: 15px;
+}
+.enroll-btn{
+    height: 44px;
+    width: 150px;
+    background-color: rgb(26, 152, 202);
+    border: none;
+    color: white;
+    border-radius: 15px;
+    font-size: 18px;
+    margin-left: 10px;
+    margin-top: 10px;
+}
+.course-heading1{
+    margin-top: 350px;
+    font-family: Arial;
+    margin-left: 90px;
+}
+.course-heading2{
+    margin-top: 100px;
+    font-family: Arial;
+    margin-left: 90px;
+}
