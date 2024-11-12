@@ -55,8 +55,8 @@ export class LoginComponent {
       if (resultData.message === "Email not exists") {
         alert("Email does not exist");
       } else if (resultData.message === "Login Success") {
-        this.router.navigateByUrl('/home');
-      } else if (resultData.message === "Access Denied - Role mismatch") {
+        this.router.navigateByUrl(resultData.role === "Admin" ? '/admin-dashboard' : '/user-dashboard');
+      }else if (resultData.message === "Access Denied - Role mismatch") {
         alert("Access Denied - Role mismatch");
       } else {
         alert("Incorrect Email or Password do not match");
