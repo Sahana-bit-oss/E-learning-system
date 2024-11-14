@@ -127,6 +127,7 @@
     border: 1px solid rgb(179, 178, 178);
     margin-top: 25px;
     border-radius: 7px;
+    box-shadow: 0px 10px 20px black;
 }
 .course-image{
     height: 220px;
@@ -169,4 +170,8 @@
     margin-top: 100px;
     font-family: Arial;
     margin-left: 90px;
+}
+.technologycourses-list .box:hover{
+    transform: translateY(-15px);
+    transition: 0.5s ease;
 }

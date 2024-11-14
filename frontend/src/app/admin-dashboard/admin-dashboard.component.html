@@ -52,7 +52,8 @@
   </div>
 
 </div>
-<div *ngIf="activeMenu==='courses'">
+
+<div *ngIf="activeMenu === 'courses'">
   <h2 style="margin-left: 710px; font-size: 28px; font-family: Arial;">Course List</h2>
   <button class="add-btn" (click)="setActiveMenu('add-course')">Add Course</button>
   <table class="course-table">
@@ -83,16 +84,6 @@
       </tr>
     </tbody>
   </table>
-  <div *ngIf="courses.length > 0" class="course-cards">
-    <div *ngFor="let course of courses" class="course-card">
-      <h3>{{ course.name }}</h3>
-      <p><strong>Skill Level:</strong> {{ course.skillLevel }}</p>
-      <p><strong>Description:</strong> {{ course.description }}</p>
-      <p><strong>Duration:</strong> {{ course.duration }}</p>
-      <p><strong>Price:</strong> {{ course.price }}</p>
-      <img *ngIf="course.image" [src]="course.image" alt="Course Image" width="100" />
-    </div>
-  </div>
 </div>
 
 <div *ngIf="activeMenu === 'add-course'">
@@ -106,18 +97,18 @@
         <input formControlName="skillLevel" />
       </label>
       <label>Course Description: <br>
-        <textarea placeholder="Enter course description..." class="text-box"></textarea>
+        <textarea formControlName="description" placeholder="Enter course description..." class="text-box"></textarea>
       </label>
       <label>Duration: <br>
-        <input formControlName="duration"/>
+        <input formControlName="duration" />
       </label>
       <label>Price: <br>
-        <input formControlName="price"  />
-      </label> 
+        <input formControlName="price" />
+      </label>
       <label for="imageUpload">Choose Image:</label>
       <input type="file" id="imageUpload" (change)="onFileSelected($event)" accept="image/*" />
 
-      <button (click)="addOrUpdateCourse()" type="submit">{{ editingCourse ? 'Update Course' : 'Add Course' }}</button>
+      <button type="submit">{{ editingCourse ? 'Update Course' : 'Add Course' }}</button>
     </form>
     <div *ngIf="imagePreview">
       <h4 style="margin-top: 50px; font-size: 15px; font-family: Arial;">Image Preview:</h4>
@@ -125,6 +116,9 @@
     </div>
   </div>
 </div>
+
+
+
 
 
 
@@ -229,3 +223,61 @@
     <button type="submit">{{ editingEnrollment ? 'Update Enrollment' : 'Add Enrollment' }}</button>
   </form>
 </div>
+
+<div *ngIf="activeMenu === 'feedback'" class="feedback-form-container">
+  <h2>Submit Feedback</h2>
+  <form [formGroup]="feedbackForm" (ngSubmit)="submitFeedback()">
+    <label>Name: <br>
+      <input formControlName="name" />
+    </label>
+    <label>Email: <br>
+      <input formControlName="email" type="email" />
+    </label>
+    <label>Message: <br>
+      <textarea class="text-box" formControlName="message"  placeholder="Enter Your feedback"></textarea>
+    </label>
+    <label>Rating: <br>
+      <select formControlName="rating">
+        <option value="5">Excellent</option>
+        <option value="4">Very Good</option>
+        <option value="3">Good</option>
+        <option value="2">Fair</option>
+        <option value="1">Poor</option>
+      </select>
+    </label>
+    <button type="submit">Submit Feedback</button>
+  </form>
+</div>
+
+
+<div *ngIf="activeMenu === 'feedbacks'" class="feedback-list">
+  <h2>Feedback List</h2>
+
+  <table class="feedback-table">
+    <thead>
+      <tr>
+        <th>ID</th>
+        <th>Name</th>
+        <th>Email</th>
+        <th>Message</th>
+        <th>Rating</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let feedback of feedbacks">
+        <td>{{ feedback.id }}</td>
+        <td>{{ feedback.name }}</td>
+        <td>{{ feedback.email }}</td>
+        <td>{{ feedback.message }}</td>
+        <td>{{ feedback.rating }}</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <p *ngIf="feedbacks.length === 0">No feedback available.</p>
+</div>
+
+<!--<div *ngIf="isAlertVisible" class="alert-box" [ngClass]="alertType">
+  <span class="alert-message">{{ alertMessage }}</span>
+  <button class="close-btn" (click)="isAlertVisible = false">✕</button>
+</div>-->

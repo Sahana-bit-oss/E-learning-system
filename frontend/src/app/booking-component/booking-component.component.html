@@ -1,0 +1,43 @@
+<div class="booking-course">
+  <div class="bg-image"></div>
+  <div class="another-container">
+  <div class="booking-container">
+    <h2>Course Booking</h2>
+
+    <form [formGroup]="bookingForm" (ngSubmit)="onSubmit()">
+
+      <label for="course">Select Course:</label>
+      <select formControlName="course" id="course">
+        <option *ngFor="let course of courses" [value]="course.id">{{ course.name }}</option>
+      </select>
+      <div *ngIf="bookingForm.controls['course'].invalid && bookingForm.controls['course'].touched">
+        <small class="error">Please select a course.</small>
+      </div>
+
+
+      <label for="date">Select Date:</label>
+      <input type="date" formControlName="date" id="date" min="{{ minDate }}" style="width: 380px;" />
+      <div *ngIf="bookingForm.controls['date'].invalid && bookingForm.controls['date'].touched">
+        <small class="error">Please select a valid date.</small>
+      </div>
+
+
+      <label for="time">Select Time Slot:</label>
+      <select formControlName="time" id="time">
+        <option *ngFor="let slot of timeSlots" [value]="slot">{{ slot }}</option>
+      </select>
+      <div *ngIf="bookingForm.controls['time'].invalid && bookingForm.controls['time'].touched">
+        <small class="error">Please select a time slot.</small>
+      </div>
+
+
+      <button type="submit">Book Course</button>
+    </form>
+
+
+    <div *ngIf="bookingConfirmed" class="confirmation-message">
+      <p>Your booking was successful! A confirmation email has been sent.</p>
+    </div>
+  </div>
+</div>
+</div>

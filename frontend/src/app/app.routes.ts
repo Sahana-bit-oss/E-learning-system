@@ -10,6 +10,7 @@ import { ResetpasswordComponent } from "./resetpassword/resetpassword.component"
 import { CoursesComponent } from "./courses/courses.component";
 import { AdminDashboardComponent } from "./admin-dashboard/admin-dashboard.component";
 import { UserDashboardComponent } from "./user-dashboard/user-dashboard.component";
+import { BookingComponentComponent } from "./booking-component/booking-component.component";
 
 export const routes: Routes =
    [ { path: '', redirectTo: 'home', pathMatch: 'full' },
@@ -23,7 +24,8 @@ export const routes: Routes =
     { path: 'student-register', component: StudentRegisterComponent },
     {path:'resetpassword',component:ResetpasswordComponent},
     {path:'admin-dashboard',component:AdminDashboardComponent},
-    {path:'user-dashboard',component:UserDashboardComponent}
+    {path:'user-dashboard',component:UserDashboardComponent},
+    {path:'booking-component',component:BookingComponentComponent}
 
 ];
 export const appRoutingProviders=[provideRouter(routes)];

@@ -55,7 +55,8 @@ export class LoginComponent {
       if (resultData.message === "Email not exists") {
         alert("Email does not exist");
       } else if (resultData.message === "Login Success") {
-        this.router.navigateByUrl(resultData.role === "Admin" ? '/admin-dashboard' : '/user-dashboard');
+        console.log('Role: ',role);
+        this.router.navigateByUrl(role === 'Admin' ? '/admin-dashboard' :'/user-dashboard' );
       }else if (resultData.message === "Access Denied - Role mismatch") {
         alert("Access Denied - Role mismatch");
       } else {
