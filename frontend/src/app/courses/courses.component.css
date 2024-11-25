@@ -111,17 +111,6 @@
     color: white;
     font-size: 20px;
 }
-.course-heading{
-    padding-top: 80px;
-    padding-left: 90px;
-    font-family: Arial;
-}
-.technologycourses-list{
-    height: 500px;
-    width: 100%;
-    display: flex;
-    justify-content: space-evenly;
-}
 .box{
     height: 512px;
     border: 1px solid rgb(179, 178, 178);
@@ -150,28 +139,110 @@
     padding-left: 10px;
     padding-top: 15px;
 }
-.enroll-btn{
+  
+.technologycourses-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 50px;
+    justify-content: space-evenly;
+    margin-top: 70px;
+  }
+
+.technologycourses-list .box:hover{
+    transform: translateY(-15px);
+    transition: 0.5s ease;
+}
+
+  
+  .course-details-container {
+    height: 100%;
+    width: 100%;
+  }
+  .background-image{
+    background-image: url('/image/course-backgroundimage.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 100%;
+    width: 100%;
+    margin: 0;
+  }
+  .background-courses{
+    height: 500px;
+    width: 100%;
+    background-color: rgb(22, 22, 22);
+    color:white;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+  }
+ .course-content{
+    height: 500px;
+    width: 700px;
+    
+ }
+ .course-content h2{
+    font-family: Arial;
+    font-size: 50px;
+ }
+ .course-content p{
+    font-family: Arial;
+    font-size: 25px;
+ }
+.course-image-container{
+    height: 500px;
+    width: 500px;
+}
+  .details-image {
+    width: 500px;
+    height: 350px;
+    margin-top: 70px;
+    border: 5px solid white;
+    border-radius: 20px;
+  }
+  
+  .enroll-btn {
     height: 44px;
     width: 150px;
     background-color: rgb(26, 152, 202);
     border: none;
     color: white;
-    border-radius: 15px;
     font-size: 18px;
-    margin-left: 10px;
     margin-top: 10px;
+    cursor: pointer;
+  }
+  
+  .back-btn {
+    height: 44px;
+    width: 200px;
+    background-color: #f44336;
+    color: white;
+    border: none;
+    font-size: 18px;
+    cursor: pointer;
+    margin-top: 50px;
+    margin-left: 65px;
+  }
+  
+  .certificate-container{
+    height: 200px;
+    width: 700px;
+    background-color: white;
+    border:1px solid #ddd;
+    border-radius: 30px;
+    margin-top: 80px;
+    margin-left: 60px;
+    display: flex;
+    justify-content: space-evenly;
+  }
+  .earn{
+    height: 150px;
+    width: 350px;
+    margin-top: 10px;
+    font-family: 'OpenSans-light', Arial, sans-serif;
 }
-.course-heading1{
-    margin-top: 350px;
-    font-family: Arial;
-    margin-left: 90px;
-}
-.course-heading2{
-    margin-top: 100px;
-    font-family: Arial;
-    margin-left: 90px;
-}
-.technologycourses-list .box:hover{
-    transform: translateY(-15px);
-    transition: 0.5s ease;
-}
+  .certificate-image{
+    height: 150px;
+    width: 150px;
+    margin-top: 20px;
+  }

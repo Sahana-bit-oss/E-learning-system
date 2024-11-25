@@ -18,6 +18,7 @@ export const routes: Routes =
     { path: 'about', component: AboutComponent },
     { path: 'contact', component: ContactComponent },
     {path:'courses',component:CoursesComponent},
+    { path: 'course-details', component: CoursesComponent }, 
     { path: 'register', component: RegisterComponent },
     { path: 'login', component: LoginComponent },
     { path: 'admin-register', component: AdminRegisterComponent },

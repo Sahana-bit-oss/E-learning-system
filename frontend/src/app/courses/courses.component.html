@@ -2,139 +2,114 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Courses</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Courses</title>
 </head>
 
 <body>
-    <div class="courses">
-        <div class="background-container">
-            <div class="black-overlay">
-                <div class="container">
-                    <div class="child-container">
-                        <img [src]="'logo.png'" height="50" class="logo-image">
-                        <h1 class="title">LearnPro</h1>
-                    </div>
-                    <div id="nav-container">
-                        <nav>
-                            <a routerLink="/home" routerLinkActive="active">Home</a>
-                            <a routerLink="/about" routerLinkActive="active">About</a>
-                            <a routerLink="/contact" routerLinkActive="active">Contact</a>
-                        </nav>
-                    </div>
+  <div class="courses" *ngIf="!selectedCourse">
+    <div class="background-container">
+      <div class="black-overlay">
+        <div class="container">
+          <div class="child-container">
+            <img [src]="'logo.png'" height="50" class="logo-image">
+            <h1 class="title">LearnPro</h1>
+          </div>
+          <div id="nav-container">
+            <nav>
+              <a routerLink="/home" routerLinkActive="active">Home</a>
+              <a routerLink="/about" routerLinkActive="active">About</a>
+              <a routerLink="/contact" routerLinkActive="active">Contact</a>
+            </nav>
+          </div>
 
-                </div>
-                <h1 class="heading">Expand Your Knowledge<br>With Our Courses</h1>
-            </div>
-            <div class="courses-container">
-                <div>
-                    <input type="text" class="input-box" placeholder="Search Courses">
-                    <select class="category">
-                        <option value=" " selected disabled>Choose Category</option>
-                        <option value="technology">Technology & Programming</option>
-                        <option value="science">Science & Engineering</option>
-                        <option value="language">Language & Communication</option>
-                    </select>
-                    <button class="search-btn" routerLink="/booking-component">Search Now</button>
-                </div>
-            </div>
-            <h1 class="course-heading">Technology and Programming</h1>
-            <div class="technologycourses-list">
-                    <div class="box" style="width: 20rem;">
-                        <img src="image/full-stack-development.gif" class="course-image">
-                        <div class="course-details">
-                            <h2>Full Stack Development</h2>
-                            <p>Master front-end and back-end skills to build full web applications.</p>
-                        </div>
-                        <p>Level : Advanced <br><br>Approx. 3 months to complete</p>
-                        <button class="enroll-btn" routerLink="/booking-component">Enroll Now</button>
-                    </div>
-                
-                    <div class="box" style="width: 20rem;">
-                        <img src="image/cybersecurity.jpg" class="course-image">
-                        <div class="course-details">
-                            <h2>Cybersecurity Basics</h2>
-                            <p>Understand key cybersecurity concepts to safeguard systems and data from threats.</p>
-                        </div>
-                        <p>Level : Basics <br><br>Approx. 24 hours to complete</p>
-                        <button class="enroll-btn" routerLink="/booking-component">Enroll Now</button>
-                    </div>
-                    <div class="box" style="width: 20rem;">
-                        <img src="image/datascience.jpg" class="course-image">
-                        <div class="course-details">
-                            <h2>Datascience with python</h2>
-                            <p>Learn to analyze and visualize data using Python for insightful decision-making.</p>
-                        </div>
-                        <p>Level : Intermediate <br><br>Approx. 1 months to complete</p>
-                        <button class="enroll-btn" routerLink="/booking-component">Enroll Now</button>
-                    </div>
-                
-            </div>
         </div>
-        <h1 class="course-heading1">Science and Engineering</h1>
-            <div class="technologycourses-list">
-                    <div class="box" style="width: 20rem;">
-                        <img src="image/physics.jpeg" class="course-image">
-                        <div class="course-details">
-                            <h2>Fundamentals of Physics</h2>
-                            <p>Learn core principles of motion, forces, and energy.</p>
-                        </div>
-                        <p>Level : Basics<br><br>Approx. 1 1/2 months to complete</p>
-                        <button class="enroll-btn" routerLink="/booking-component">Enroll Now</button>
-                    </div>
-                
-                    <div class="box" style="width: 20rem;">
-                        <img src="image/distributedcomputing.jpeg" class="course-image">
-                        <div class="course-details">
-                            <h2>Distributed Computing</h2>
-                            <p>Study data sharing and parallel processing across systems.</p>
-                        </div>
-                        <p>Level : Basics <br><br>Approx. 1 1/2 months to complete</p>
-                        <button class="enroll-btn" routerLink="/booking-component">Enroll Now</button>
-                    </div>
-                    <div class="box" style="width: 20rem;">
-                        <img src="image/cd.jpeg" class="course-image">
-                        <div class="course-details">
-                            <h2>Compiler Design</h2>
-                            <p>Discover how code is translated into machine language for execution.</p>
-                        </div>
-                        <p>Level : Basics <br><br>Approx. 1 1/2 months to complete</p>
-                        <button class="enroll-btn" routerLink="/booking-component">Enroll Now</button>
-                    </div>
-                
-            </div>
-        <h1 class="course-heading2">Language and Communication</h1>
-            <div class="technologycourses-list">
-                    <div class="box" style="width: 20rem;">
-                        <img src="image/publicspeaking.jpeg" class="course-image">
-                        <div class="course-details">
-                            <h2>Effective Public Speaking</h2>
-                            <p> Gain confidence to deliver impactful presentations.</p>
-                        </div>
-                        <p>Level : Intermediate <br><br>Approx. 3 hours to complete</p>
-                        <button class="enroll-btn" routerLink="/booking-component">Enroll Now</button>
-                    </div>
-                
-                    <div class="box" style="width: 20rem;">
-                        <img src="image/writingcourse.jpeg" class="course-image">
-                        <div class="course-details">
-                            <h2>Creative Writing Essentials</h2>
-                            <p>Develop skills and techniques to craft compelling stories.</p>
-                        </div>
-                        <p>Level : Basics <br><br>Approx. 5 hours to complete</p>
-                        <button class="enroll-btn" routerLink="/booking-component">Enroll Now</button>
-                    </div>
-                    <div class="box" style="width: 20rem;">
-                        <img src="image/businesscoursse.png" class="course-image">
-                        <div class="course-details">
-                            <h2>Business Communication</h2>
-                            <p>Enhance English skills for clear, professional interactions.</p>
-                        </div>
-                        <p>Level : Intermediate <br><br>Approx. 2 hours to complete</p>
-                        <button class="enroll-btn" routerLink="/booking-component">Enroll Now</button>
-                    </div>
-                
-            </div>
+        <h1 class="heading">Expand Your Knowledge<br>With Our Courses</h1>
+      </div>
+      <div class="courses-container">
+        <div>
+          <input type="text" class="input-box" placeholder="Search Courses" [(ngModel)]="searchQuery"
+            (input)="filterCourses()">
+          <select class="category" [(ngModel)]="searchQuery" (input)="filterCourses()">
+            <option value=" " selected disabled>Choose Category</option>
+            <option value="technology">Technology & Programming</option>
+
+            <option value="science">Science & Engineering</option>
+            <option value="language">Language & Communication</option>
+          </select>
+          <button class="search-btn" (click)="filterCourses()">Search Now</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div *ngIf="!selectedCourse">
+
+    <div class="technologycourses-list">
+
+      <div class="box" style="width: 20rem;"
+        *ngFor="let course of (filteredCourses.length > 0 ? filteredCourses : courses)" (click)="viewDetails(course)">
+        <img [src]="course.image" class="course-image" alt="{{ course.title }}">
+        <div class="course-details">
+          <h2>{{ course.title }}</h2>
+          <p>{{ course.description }}</p>
+        </div>
+        <p>Level: {{ course.level }} <br> {{ course.duration }}</p>
+        <button class="enroll-btn" style="margin-left: 20px; border-radius: 15px;">View Details</button>
+      </div>
+    </div>
+
+  </div>
+
+  <div *ngIf="selectedCourse" class="course-details-container">
+    <div class="background-image">
+    <div class="background-courses">
+      <div class="course-content">
+        <h2>{{ selectedCourse.title }}</h2>
+        <p>{{ selectedCourse.description }}</p>
+        <p><strong>Level:</strong> {{ selectedCourse.level }}</p>
+        <p><strong>Duration:</strong> {{ selectedCourse.duration }}</p>
+        <p style="word-spacing:40px;">BestSeller Ratings:{{ selectedCourse.ratings }}</p>
+        <h4 style="font-family: Arial;"> English & English CC</h4>
+        <button class="enroll-btn" routerLink="/booking-component">Enroll Now</button>
+      </div>
+      <div class="course-image-container">
+        <img [src]="selectedCourse.image" class="details-image" alt="{{ selectedCourse.title }}">
+      </div>
+    </div>
     
-    
+    <h1 style="font-family: Arial; margin-left: 50px; margin-top: 40px;">What You'll be Learn?</h1>
+    <ul>
+      <li *ngFor="let module of selectedCourse.topics"
+        style="margin-left: 40px; font-family: Arial; font-size: 18px; margin-top: 5px;">{{ module }}</li>
+    </ul>
+    <h1 style="font-family: Arial; margin-left: 50px; margin-top: 40px;">Course Content</h1>
+    <table style="width: 1000px; border-collapse: collapse; font-family: Arial; ; font-size: 18px; margin-top: 10px; margin-left: 55px;">
+      <thead>
+        <tr style="background-color: rgb(26, 152, 202); text-align: center; color:white" >
+          <th style="padding: 8px; border: 1px solid #ddd; height: 28px; width: 60px;">S.no</th>
+          <th style="padding: 8px; border: 1px solid #ddd; height: 28px; width: 500px;" >Chapters</th>
+          <th style="padding: 8px; border: 1px solid #ddd; height: 28px; width: 150px;">Time to Complete</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let content of selectedCourse.content; let i = index">
+          <td style="padding: 8px; border: 1px solid #ddd; ">{{ i + 1 }}</td>
+          <td style="padding: 8px; border: 1px solid #ddd;">{{ content.title }}</td>
+          <td style="padding: 8px; border: 1px solid #ddd;">{{ content.time }}</td>
+        </tr>
+      </tbody>
+    </table>
+    <div class="certificate-container">
+          <div class="earn">
+            <h2 style="font-size: 28px; color:navy;">Earn Certificate</h2>
+            <p>Add this credential to your LinkedIn profile, resume, or CV<br>
+              Share it on social media and in your performance review</p>
+          </div>
+          <div class="certificate-image">
+            <img [src]="'/image/certification.png'" height="150px" width="150px">
+          </div>
+    </div>
+    <button (click)="goBack()" class="back-btn">Back to Courses</button>
+  </div>
+</div>

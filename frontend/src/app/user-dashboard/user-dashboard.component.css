@@ -405,3 +405,59 @@
   font-size: 20px;
   font-family: Arial;
 }
+
+.notification-icon {
+    margin-top:18px;
+    height: 30px;
+    width: 30px;
+    margin-right: 20px;
+    cursor: pointer;
+}
+
+.badge {
+  position: absolute;
+  top: 15px;
+  right: 13px; 
+  background: red; 
+  color: white; 
+  font-size: 12px; 
+  padding: 2px 6px; 
+  border-radius: 100%; 
+  font-weight: bold; 
+  display: inline-block;
+  min-width: 10px; 
+  text-align: center;
+}
+.notification-dropdown {
+  position: absolute;
+  top: 40px;
+  right: 10px;
+  background: white;
+  border: 1px solid #ccc;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  border-radius: 5px;
+  width: 300px;
+  z-index: 1000;
+}
+
+.notification-item {
+  padding: 10px;
+  border-bottom: 1px solid #f0f0f0;
+  cursor: pointer;
+}
+
+.notification-item.unread {
+  font-weight: bold;
+  background: #f9f9f9;
+}
+
+.notification-item p {
+  margin: 0;
+  font-size: 14px;
+}
+
+.notification-item small {
+  display: block;
+  color: #999;
+  font-size: 12px;
+}

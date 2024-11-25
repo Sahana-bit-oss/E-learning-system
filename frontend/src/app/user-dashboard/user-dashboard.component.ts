@@ -42,6 +42,8 @@ interface Progress {
 export class UserDashboardComponent {
   isVisible:boolean=false;
   activeMenu: string = 'profile';
+  unreadCount: number = 3;
+  notifications: any;
 
   showSideNav(){
     this.isVisible=!this.isVisible;
@@ -93,6 +95,7 @@ export class UserDashboardComponent {
 
   ngOnInit() {
     this.editedProfile = { ...this.userProfile }; 
+  
   }
 
   editProfile(){
@@ -119,5 +122,10 @@ export class UserDashboardComponent {
       this.favoriteCourses.push(course);
     }
   }
-}
+
+  
+  }
+ 
+ 
+  
 
