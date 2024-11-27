@@ -62,10 +62,26 @@
   </div>
 
   <div *ngIf="selectedCourse" class="course-details-container">
+    
     <div class="background-image">
+     
     <div class="background-courses">
+      <div style="height: 50px; width: 100%; display: flex; justify-content: space-between;">
+        <div class="child-container" style="width: 200px;">
+          <img [src]="'logo.png'" height="50" class="logo-image">
+          <h1 class="title" style="font-family: 'OpenSans-light', Arial, sans-serif;">LearnPro</h1>
+        </div>
+      
+      <div id="nav-container" style=" height: 20px; width: 600px;">
+            <nav style="font-family: 'OpenSans-light', Arial, sans-serif; display: flex; justify-content: space-evenly; ">
+                <a routerLink="/home" routerLinkActive="active">Home</a>
+                <a routerLink="/about" routerLinkActive="active">About</a>
+                <a routerLink="/contact" routerLinkActive="active">Contact</a>
+            </nav>
+          </div>
+      </div>
       <div class="course-content">
-        <h2>{{ selectedCourse.title }}</h2>
+        <h2 style="margin-top: 50px;">{{ selectedCourse.title }}</h2>
         <p>{{ selectedCourse.description }}</p>
         <p><strong>Level:</strong> {{ selectedCourse.level }}</p>
         <p><strong>Duration:</strong> {{ selectedCourse.duration }}</p>

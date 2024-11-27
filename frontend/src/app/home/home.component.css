@@ -111,3 +111,135 @@
     color:white;
     cursor: pointer;
 }
+.content {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    flex-wrap: wrap;
+    padding: 40px;
+  }
+  
+  .image-section {
+    flex: 0 0 40%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .hero-image {
+    
+    height: 250px;
+    width: 300px;
+    border-radius: 50%;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  }
+  
+  .text-section {
+    flex: 1;
+    padding-left: 40px; 
+  }
+  
+  .text-section h1 {
+    font-size: 36px;
+    font-weight: bold;
+    margin-bottom: 20px;
+  }
+  
+  .text-section p {
+    font-size: 18px;
+    margin-bottom: 20px;
+  }
+  .background-image{
+    background-image: url('/image/course-backgroundimage.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 350px;
+    width: 100%;
+    margin: 0;
+  }
+
+
+
+  footer {
+    background-color: #121212;
+    color: #fff;
+    padding: 20px;
+    font-family: Arial, sans-serif;
+  }
+  
+  .footer-container {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    gap: 20px;
+  }
+  
+  .footer-section {
+    flex: 1;
+    min-width: 200px;
+  }
+  
+  .footer-section h4 {
+    font-size: 1.2em;
+    margin-bottom: 10px;
+  }
+  
+  .footer-section ul {
+    list-style: none;
+    padding: 0;
+  }
+  
+  .footer-section ul li {
+    margin-bottom: 8px;
+  }
+  
+  .footer-section ul li a {
+    text-decoration: none;
+    color: #fff;
+    font-size: 0.9em;
+  }
+  
+  .social-icons a {
+    margin-right: 10px;
+  }
+  
+  .social-icons img {
+    width: 24px;
+    height: 24px;
+  }
+  
+  .refer-button {
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    padding: 8px 12px;
+    cursor: pointer;
+    border-radius: 4px;
+  }
+  
+  .refer-button:hover {
+    background-color: #0056b3;
+  }
+  
+  .footer-bottom {
+    margin-top: 20px;
+    text-align: center;
+    font-size: 0.85em;
+    border-top: 1px solid #333;
+    padding-top: 10px;
+  }
+  
+  .app-links img {
+    width: 120px;
+    margin-right: 10px;
+  }
+
+  .footer-copyright {
+    text-align: center;
+    margin-top: 15px;
+    font-size: 0.8em;
+    color: #aaa;
+    border-top: 1px solid #333;
+    padding-top: 10px;
+  }

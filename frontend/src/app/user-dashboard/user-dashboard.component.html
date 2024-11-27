@@ -14,9 +14,29 @@
                 <h3>Log out</h3>
             </div>
             <div class="notification-container">
-              <img class="notification-icon" title="Notifications" [src]="'/image/notification.png'">
-              <span *ngIf="unreadCount > 0" class="badge">{{ unreadCount }}</span>
-            </div>            
+              <div class="notification-icon-container">
+                <img class="notification-icon" src="/image/notification-icon.png" alt="Notifications">
+                <span class="badge">3</span>
+              </div>
+              <div class="notification-dropdown">
+                <div class="notification-item unread">
+                  <p>New course available: Advanced Angular</p>
+                  <small>2 hours ago</small>
+                </div>
+                <div class="notification-item">
+                  <p>Booking confirmed for Python Basics</p>
+                  <small>1 day ago</small>
+                </div>
+                <div class="notification-item">
+                  <p>Feedback request for Web Development</p>
+                  <small>3 days ago</small>
+                </div>
+                <div class="see-all">
+                  <button onclick="viewAllNotifications()">View All Notifications</button>
+                </div>
+              </div>
+            </div>
+                       
     </div>
 
     <div class="sideNav" [class.menuOpen]="isVisible">
@@ -35,14 +55,17 @@
 <div *ngIf="activeMenu === 'profile'" class="profile-section">
     <h2 style="font-family: Arial; text-align: center; padding-top: 40px;">User Profile</h2>
   
-    <div class="profile-info">
-      <div class="profile-field">
-        <h2 style="margin-right: 20px;">Hi , {{ userProfile.name }}</h2>
+    <div class="profile-card">
+      <div class="profile-image">
+        <img [src]="userProfile.profilePicture || '/image/student.png'" alt="Profile Picture" class="profile-img" />
       </div>
       <div class="profile-field">
+        <h2 style="margin-bottom: 30px;  font-family: 'OpenSans-light', Arial, sans-serif; font-size: 35px;">Hi , {{ userProfile.name }}</h2>
+      </div>
+      <div class="profile-field" style="font-family: 'OpenSans-light', Arial, sans-serif; font-size: 25px;">
         <span>{{ userProfile.email }}</span>
       </div>
-      <div class="profile-field">
+      <div class="profile-field" style="font-family: 'OpenSans-light', Arial, sans-serif; font-size: 25px;">
         <label style="margin-right: 20px;">Joined :</label>
         <span>{{ userProfile.joinDate | date:'mediumDate' }}</span>
       </div>
@@ -59,13 +82,16 @@
       <form>
       <label>
         Name: <br>
-        <input [(ngModel)]="editedProfile.name" />
+        <input [(ngModel)]="editedProfile.name" [ngModelOptions]="{standalone: true}"/>
       </label><br>
       <label>
         Email: <br>
-        <input [(ngModel)]="editedProfile.email" />
+        <input [(ngModel)]="editedProfile.email" [ngModelOptions]="{standalone: true}"/>
       </label> 
-   
+      <label>
+        Profile Picture: <br />
+        <input type="file" (change)="onProfilePictureChange($event)" />
+      </label><br />
       <button (click)="saveProfile()" class="save-button">Save</button>
       <button (click)="cancelEdit()" class="cancel-button">Cancel</button>
     </form>
@@ -99,36 +125,6 @@
         <p>No courses enrolled yet. Start exploring and enroll in a course!</p>
       </ng-template>
     </div>
-
-
-    <!--<div *ngIf="activeMenu === 'enrolled-courses'" class="enrolled-courses-section">
-      <h2>Your Enrolled Courses</h2>
-      
-      <table *ngIf="enrolledCourses.length > 0; else noCoursesMessage" class="enrolled-courses-table">
-        <thead>
-          <tr>
-            <th>Course Name</th>
-            <th>Instructor</th>
-            <th>Duration</th>
-            <th>Progress</th>
-            <th>Status</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr *ngFor="let course of enrolledCourses">
-            <td>{{ course.name }}</td>
-            <td>{{ course.instructor }}</td>
-            <td>{{ course.duration }}</td>
-            <td>{{ course.progress }}%</td>
-            <td>{{ course.status }}</td>
-          </tr>
-        </tbody>
-      </table>
-    
-      <ng-template #noCoursesMessage>
-        <p>No courses enrolled yet. Start exploring and enroll in a course!</p>
-      </ng-template>
-    </div>-->
 
   
     <div *ngIf="activeMenu === 'progress'" class="progress-section">
@@ -195,4 +191,61 @@
       </ng-template>
     </div>
 
-   
+    <div *ngIf="activeMenu === 'feedback'" class="feedback-form-container">
+      <h2>Submit Feedback</h2>
+      <form [formGroup]="feedbackForm" (ngSubmit)="submitFeedback()">
+        <label>Name: <br>
+          <input formControlName="name" />
+        </label>
+        <label>Email: <br>
+          <input formControlName="email" type="email" />
+        </label>
+        <label>Message: <br>
+          <textarea class="text-box" formControlName="message"  placeholder="Enter Your feedback"></textarea>
+        </label>
+        <label>Rating: <br>
+          <select formControlName="rating">
+            <option value="5">Excellent</option>
+            <option value="4">Very Good</option>
+            <option value="3">Good</option>
+            <option value="2">Fair</option>
+            <option value="1">Poor</option>
+          </select>
+        </label>
+        <button type="submit">Submit Feedback</button>
+      </form>
+    </div>
+    
+    
+    <div *ngIf="activeMenu === 'feedbacks'" class="feedback-list">
+      <h2>Feedback List</h2>
+    
+      <table class="feedback-table">
+        <thead>
+          <tr>
+            <th>ID</th>
+            <th>Name</th>
+            <th>Email</th>
+            <th>Message</th>
+            <th>Rating</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let feedback of feedbacks">
+            <td>{{ feedback.id }}</td>
+            <td>{{ feedback.name }}</td>
+            <td>{{ feedback.email }}</td>
+            <td>{{ feedback.message }}</td>
+            <td>{{ feedback.rating }}</td>
+          </tr>
+        </tbody>
+      </table>
+    
+      <p *ngIf="feedbacks.length === 0">No feedback available.</p>
+    </div>
+    
+
+    <div *ngIf="isAlertVisible" class="alert-box" [ngClass]="alertType">
+      <span class="alert-message">{{ alertMessage }}</span>
+      <button class="close-btn" (click)="isAlertVisible = false">✕</button>
+    </div>

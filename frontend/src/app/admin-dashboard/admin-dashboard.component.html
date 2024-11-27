@@ -119,9 +119,6 @@
 
 
 
-
-
-
 <div *ngIf="activeMenu === 'users'" class="user-list">
   <h2 style="margin-left: 700px; font-family: Arial">User List</h2>
   <button class="add-btn" (click)="setActiveMenu('add-user')" style="margin-left:670px;">Add User</button>
@@ -277,7 +274,7 @@
   <p *ngIf="feedbacks.length === 0">No feedback available.</p>
 </div>
 
-<!--<div *ngIf="isAlertVisible" class="alert-box" [ngClass]="alertType">
+<div *ngIf="isAlertVisible" class="alert-box" [ngClass]="alertType">
   <span class="alert-message">{{ alertMessage }}</span>
   <button class="close-btn" (click)="isAlertVisible = false">✕</button>
-</div>-->
+</div>
